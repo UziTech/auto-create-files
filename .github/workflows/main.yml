@@ -22,16 +22,6 @@ jobs:
     - name: APM version
       run: apm -v
     - name: Install dependencies
-      run: apm ci
+      run: apm i
     - name: Run tests 👩🏾‍💻
       run: atom --test spec
-
-  Lint:
-    needs: [test]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: NPM install
-        run: npm ci
-      - name: Lint ✨
-        run: npm run lint
